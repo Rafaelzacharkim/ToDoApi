@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Rafae\\OneDrive\\Documents\\ToDoApi\\ToDoApi.csproj": {}
+    "C:\\Users\\Rafae\\OneDrive\\Desktop\\ToDoApi\\ToDoApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Rafae\\OneDrive\\Documents\\ToDoApi\\ToDoApi.csproj": {
+    "C:\\Users\\Rafae\\OneDrive\\Desktop\\ToDoApi\\ToDoApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Rafae\\OneDrive\\Documents\\ToDoApi\\ToDoApi.csproj",
+        "projectUniqueName": "C:\\Users\\Rafae\\OneDrive\\Desktop\\ToDoApi\\ToDoApi.csproj",
         "projectName": "ToDoApi",
-        "projectPath": "C:\\Users\\Rafae\\OneDrive\\Documents\\ToDoApi\\ToDoApi.csproj",
+        "projectPath": "C:\\Users\\Rafae\\OneDrive\\Desktop\\ToDoApi\\ToDoApi.csproj",
         "packagesPath": "C:\\Users\\Rafae\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Rafae\\OneDrive\\Documents\\ToDoApi\\obj\\",
+        "outputPath": "C:\\Users\\Rafae\\OneDrive\\Desktop\\ToDoApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Rafae\\AppData\\Roaming\\NuGet\\NuGet.Config"
