@@ -1,0 +1,22 @@
+POST http://localhost:5000/auth/register
+Content-Type: application/json
+
+{
+  "nome": "João Silva",
+  "email": "joao@email.com",
+  "senha": "123456"
+}
+
+
+###
+
+### Login do usuário
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+  "email": "joao@email.com",
+  "senha": "123456"
+}
+
+

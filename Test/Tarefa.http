@@ -1,0 +1,33 @@
+### Criar tarefa
+POST http://localhost:5000/tarefas
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9hb0BlbWFpbC5jb20iLCJleHAiOjE3NDY5MDI3OTcsImlzcyI6IlRvRG9BcGkiLCJhdWQiOiJUb0RvQXBpVXNlciJ9.aTf8c0vnSEhvnrb6Z_lxeqSkS5zwq13C1LUw6uPc3ZQ
+Content-Type: application/json
+
+{
+  "titulo": "Estudar ASP.NET",
+  "concluida": false
+}
+
+###
+
+### Listar tarefas do usuário logado
+GET http://localhost:5000/tarefas
+Authorization: Bearer {{token}}
+
+###
+
+### Atualizar tarefa
+PUT http://localhost:5000/tarefas/1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "titulo": "Estudar ASP.NET com EF Core",
+  "concluida": true
+}
+
+###
+
+### Deletar tarefa
+DELETE http://localhost:5000/tarefas/1
+Authorization: Bearer {{token}}

@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Rafae\\OneDrive\\Desktop\\ToDoApi\\ToDoApi.csproj": {}
+    "C:\\Users\\bruno\\Documents\\projt\\ToDoApi\\ToDoApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Rafae\\OneDrive\\Desktop\\ToDoApi\\ToDoApi.csproj": {
+    "C:\\Users\\bruno\\Documents\\projt\\ToDoApi\\ToDoApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Rafae\\OneDrive\\Desktop\\ToDoApi\\ToDoApi.csproj",
+        "projectUniqueName": "C:\\Users\\bruno\\Documents\\projt\\ToDoApi\\ToDoApi.csproj",
         "projectName": "ToDoApi",
-        "projectPath": "C:\\Users\\Rafae\\OneDrive\\Desktop\\ToDoApi\\ToDoApi.csproj",
-        "packagesPath": "C:\\Users\\Rafae\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Rafae\\OneDrive\\Desktop\\ToDoApi\\obj\\",
+        "projectPath": "C:\\Users\\bruno\\Documents\\projt\\ToDoApi\\ToDoApi.csproj",
+        "packagesPath": "C:\\Users\\bruno\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bruno\\Documents\\projt\\ToDoApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Rafae\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\bruno\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -91,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
