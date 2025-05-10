@@ -57,5 +57,6 @@ namespace ToDoApi.Repositories
             return await _context.Usuarios
                 .FirstOrDefaultAsync(u => u.Email == email && u.Senha == senha);
         }
+        
     }
 }

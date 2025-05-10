@@ -25,6 +25,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 // Registrando o repositório
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+builder.Services.AddScoped<ITarefaRepository, TarefaRepository>();
+
 
 // Registrando o TokenService
 builder.Services.AddSingleton<TokenService>();
