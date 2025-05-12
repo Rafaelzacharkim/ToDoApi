@@ -35,6 +35,38 @@ namespace ToDoApi.Controllers
             context.SaveChanges();
             return Created("", model);
         }
+        [Authorize]
+    [HttpPut("nome")]
+    public IActionResult AtualizarNome([FromBody] string novoNome, [FromServices] AppDbContext context)
+    {
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        if (userId == null) return Unauthorized();
+
+        var usuario = context.Usuarios.FirstOrDefault(x => x.Id == int.Parse(userId));
+        if (usuario == null) return NotFound();
+
+        usuario.Nome = novoNome;
+        context.SaveChanges();
+
+        return Ok(new { message = "Nome atualizado com sucesso." });
+    }
+
+    
+    [Authorize]
+    [HttpDelete]
+    public IActionResult DeletarConta([FromServices] AppDbContext context)
+    {
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        if (userId == null) return Unauthorized();
+
+        var usuario = context.Usuarios.FirstOrDefault(x => x.Id == int.Parse(userId));
+        if (usuario == null) return NotFound();
+
+        context.Usuarios.Remove(usuario);
+        context.SaveChanges();
+
+        return Ok(new { message = "Conta excluída com sucesso." });
+    }
     }
 }
 
