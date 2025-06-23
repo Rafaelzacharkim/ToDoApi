@@ -2,6 +2,9 @@ using Microsoft.AspNetCore.Mvc;
 using ToDoApi.Data;
 using ToDoApi.Models;
 using ToDoApi.Services; // Adicione o namespace do TokenService
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
+
 
 namespace ToDoApi.Controllers
 {
@@ -36,37 +39,37 @@ namespace ToDoApi.Controllers
             return Created("", model);
         }
         [Authorize]
-    [HttpPut("nome")]
-    public IActionResult AtualizarNome([FromBody] string novoNome, [FromServices] AppDbContext context)
-    {
-        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-        if (userId == null) return Unauthorized();
+        [HttpPut("nome")]
+        public IActionResult AtualizarNome([FromBody] string novoNome, [FromServices] AppDbContext context)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (userId == null) return Unauthorized();
 
-        var usuario = context.Usuarios.FirstOrDefault(x => x.Id == int.Parse(userId));
-        if (usuario == null) return NotFound();
+            var usuario = context.Usuarios.FirstOrDefault(x => x.Id == int.Parse(userId));
+            if (usuario == null) return NotFound();
 
-        usuario.Nome = novoNome;
-        context.SaveChanges();
+            usuario.Nome = novoNome;
+            context.SaveChanges();
 
-        return Ok(new { message = "Nome atualizado com sucesso." });
-    }
+            return Ok(new { message = "Nome atualizado com sucesso." });
+        }
 
-    
-    [Authorize]
-    [HttpDelete]
-    public IActionResult DeletarConta([FromServices] AppDbContext context)
-    {
-        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-        if (userId == null) return Unauthorized();
 
-        var usuario = context.Usuarios.FirstOrDefault(x => x.Id == int.Parse(userId));
-        if (usuario == null) return NotFound();
+        [Authorize]
+        [HttpDelete]
+        public IActionResult DeletarConta([FromServices] AppDbContext context)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (userId == null) return Unauthorized();
 
-        context.Usuarios.Remove(usuario);
-        context.SaveChanges();
+            var usuario = context.Usuarios.FirstOrDefault(x => x.Id == int.Parse(userId));
+            if (usuario == null) return NotFound();
 
-        return Ok(new { message = "Conta excluída com sucesso." });
-    }
+            context.Usuarios.Remove(usuario);
+            context.SaveChanges();
+
+            return Ok(new { message = "Conta excluída com sucesso." });
+        }
     }
 }
 

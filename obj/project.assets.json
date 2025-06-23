@@ -3810,11 +3810,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bruno\\Documents\\projt\\ToDoApi\\ToDoApi.csproj",
+      "projectUniqueName": "C:\\Users\\bruno\\Documents\\zapdos\\ToDoApi\\ToDoApi.csproj",
       "projectName": "ToDoApi",
-      "projectPath": "C:\\Users\\bruno\\Documents\\projt\\ToDoApi\\ToDoApi.csproj",
+      "projectPath": "C:\\Users\\bruno\\Documents\\zapdos\\ToDoApi\\ToDoApi.csproj",
       "packagesPath": "C:\\Users\\bruno\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bruno\\Documents\\projt\\ToDoApi\\obj\\",
+      "outputPath": "C:\\Users\\bruno\\Documents\\zapdos\\ToDoApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\bruno\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -8,6 +8,16 @@ using ToDoApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend",
+        policy => policy
+            .WithOrigins("http://localhost:3000")
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials()); 
+});
+
 // Configuração do Kestrel para HTTPS
 builder.WebHost.ConfigureKestrel(options =>
 {
@@ -56,10 +66,14 @@ builder.Services.AddControllers();
 
 var app = builder.Build();
 
-// Configuração do pipeline de requisições
-app.UseHttpsRedirection(); // Redireciona requisições HTTP para HTTPS
-app.UseAuthentication();   // Autenticação JWT
-app.UseAuthorization();    // Autorização
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+}
+app.UseCors("AllowFrontend");     // 1º: trate CORS
+app.UseAuthentication();          // 3º: agora autenticação/autorização
+app.UseAuthorization();
 app.MapControllers();
-// Iniciando a aplicação
+
 app.Run();
