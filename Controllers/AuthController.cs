@@ -54,6 +54,21 @@ namespace ToDoApi.Controllers
 
             return Ok(new { message = "Nome atualizado com sucesso." });
         }
+        // Adicionar dentro da classe AuthController
+
+        [Authorize]
+        [HttpGet("me")]
+        public IActionResult GetCurrentUser([FromServices] AppDbContext context)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (userId == null) return Unauthorized();
+
+            var usuario = context.Usuarios.FirstOrDefault(x => x.Id == int.Parse(userId));
+            if (usuario == null) return NotFound();
+
+            // Nunca retornar a senha, mesmo que seja o hash
+            return Ok(new { nome = usuario.Nome, email = usuario.Email });
+        }
 
 
         [Authorize]
