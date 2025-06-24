@@ -1,0 +1,115 @@
+/* src/styles/AuthLayout.module.css */
+
+/* --- Estilos do Layout --- */
+.main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+
+/* --- Estilos do Formulário --- */
+.formContainer {
+  width: 100%;
+  max-width: 420px;
+  padding: 2.5rem;
+  background-color: #2a004f;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  text-align: center;
+  color: #d8b4fe;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  color: #111;
+  font-size: 1rem;
+}
+
+.input::placeholder {
+  color: #aaa;
+}
+
+.input:focus {
+  outline: 2px solid #9333ea;
+  border-color: transparent;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.button {
+  flex: 1;
+  text-align: center;
+  padding: 0.9rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid transparent;
+}
+
+.primaryButton {
+  background-color: #fff;
+  color: #2a004f;
+}
+
+.primaryButton:hover {
+  background-color: #e0e0e0;
+}
+
+.secondaryButton {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.secondaryButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.error {
+  color: #ff8a8a;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: -0.5rem;
+  margin-bottom: 0.5rem;
+}

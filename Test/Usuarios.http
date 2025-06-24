@@ -1,3 +1,4 @@
+### Cadastro de usuário
 POST http://localhost:5000/auth/register
 Content-Type: application/json
 
@@ -8,8 +9,6 @@ Content-Type: application/json
 }
 
 
-###
-
 ### Login do usuário
 POST http://localhost:5000/auth/login
 Content-Type: application/json
@@ -18,7 +17,9 @@ Content-Type: application/json
   "email": "joao@email.com",
   "senha": "123456"
 }
-###
+
+
+### Exclusão de usuário 
 
 
 

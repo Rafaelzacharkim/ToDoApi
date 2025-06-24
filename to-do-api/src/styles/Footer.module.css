@@ -1,0 +1,12 @@
+/* src/styles/Footer.module.css */
+.footer {
+  position: fixed; bottom: 0; left: 0; width: 100%;
+  background-color: #1a1a1a;
+  color: #d8b4fe;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.875rem;
+  border-top: 1px solid #333;
+  z-index: 1000;
+}
+

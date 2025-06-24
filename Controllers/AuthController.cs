@@ -38,6 +38,7 @@ namespace ToDoApi.Controllers
             context.SaveChanges();
             return Created("", model);
         }
+
         [Authorize]
         [HttpPut("nome")]
         public IActionResult AtualizarNome([FromBody] string novoNome, [FromServices] AppDbContext context)

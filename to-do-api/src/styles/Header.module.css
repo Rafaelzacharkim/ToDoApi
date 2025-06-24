@@ -1,0 +1,11 @@
+/* src/styles/Header.module.css */
+.header {
+  position: fixed; top: 0; left: 0; width: 100%;
+  background-color: #2a004f;
+  border-bottom: 1px solid #4A00E0;
+  border-bottom: 1px solid #333;
+  z-index: 1000;
+  padding: 1rem 2rem;
+}
+.container { max-width: 1200px; margin: 0 auto; }
+.logo { font-size: 1.5rem; color: #fff; }
