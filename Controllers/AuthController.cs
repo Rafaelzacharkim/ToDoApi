@@ -5,16 +5,14 @@ using ToDoApi.Services; // Adicione o namespace do TokenService
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
 
-
 namespace ToDoApi.Controllers
 {
     [ApiController]
     [Route("auth")]
     public class AuthController : ControllerBase
     {
-        private readonly TokenService _tokenService;  // Declara o TokenService
+        private readonly TokenService _tokenService;  
 
-        // Injeção de dependência no construtor
         public AuthController(TokenService tokenService)
         {
             _tokenService = tokenService;
@@ -26,7 +24,6 @@ namespace ToDoApi.Controllers
             var usuario = context.Usuarios.FirstOrDefault(x => x.Email == model.Email && x.Senha == model.Senha);
             if (usuario == null) return Unauthorized();
 
-            // Chama o método GenerateToken através da instância injetada
             var token = _tokenService.GenerateToken(usuario);
             return Ok(new { token });
         }
@@ -54,7 +51,7 @@ namespace ToDoApi.Controllers
 
             return Ok(new { message = "Nome atualizado com sucesso." });
         }
-        // Adicionar dentro da classe AuthController
+        
 
         [Authorize]
         [HttpGet("me")]
@@ -66,7 +63,6 @@ namespace ToDoApi.Controllers
             var usuario = context.Usuarios.FirstOrDefault(x => x.Id == int.Parse(userId));
             if (usuario == null) return NotFound();
 
-            // Nunca retornar a senha, mesmo que seja o hash
             return Ok(new { nome = usuario.Nome, email = usuario.Email });
         }
 
@@ -86,6 +82,40 @@ namespace ToDoApi.Controllers
 
             return Ok(new { message = "Conta excluída com sucesso." });
         }
-    }
-}
 
+        [Authorize]
+        [HttpPut("update")]
+        public IActionResult UpdateUser([FromBody] UpdateUserModel model, [FromServices] AppDbContext context)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (userId == null) return Unauthorized();
+
+            var usuario = context.Usuarios.FirstOrDefault(x => x.Id == int.Parse(userId));
+            if (usuario == null) return NotFound();
+
+            if (usuario.Senha != model.SenhaAtual)
+            {
+                return Unauthorized(new { message = "Senha atual incorreta." });
+            }
+
+            if (!string.IsNullOrEmpty(model.Nome))
+            {
+                usuario.Nome = model.Nome;
+            }
+
+            if (!string.IsNullOrEmpty(model.Email))
+            {
+                var emailExists = context.Usuarios.Any(x => x.Email == model.Email && x.Id != usuario.Id);
+                if (emailExists)
+                {
+                    return Conflict(new { message = "O novo e-mail já está em uso." });
+                }
+                usuario.Email = model.Email;
+            }
+
+            context.SaveChanges();
+
+            return Ok(new { message = "Dados atualizados com sucesso!" });
+        }
+    }
+}
