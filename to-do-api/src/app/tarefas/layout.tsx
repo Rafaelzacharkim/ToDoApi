@@ -1,5 +1,5 @@
 // src/app/tarefas/layout.tsx
-import Header from "../../components/Header/headers";
+import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/footer";
 import styles from '../../styles/AuthLayout.module.css'; // Podemos reutilizar este estilo
 
