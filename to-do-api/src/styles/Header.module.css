@@ -1,11 +1,103 @@
-/* src/styles/Header.module.css */
-.header {
-  position: fixed; top: 0; left: 0; width: 100%;
-  background-color: #2a004f;
-  border-bottom: 1px solid #4A00E0;
-  border-bottom: 1px solid #333;
-  z-index: 1000;
-  padding: 1rem 2rem;
-}
-.container { max-width: 1200px; margin: 0 auto; }
-.logo { font-size: 1.5rem; color: #fff; }
+/* src/styles/Header.module.css */ 
+
+.header { 
+
+  position: fixed; 
+
+  top: 0; 
+
+  left: 0; 
+
+  width: 100%; 
+
+  background-color: var(--primary-dark); 
+
+  border-bottom: 1px solid var(--primary-border); 
+
+  z-index: 1000; 
+
+  padding: 1rem 2rem; 
+
+} 
+
+ 
+
+.container { 
+
+  max-width: 1200px; 
+
+  margin: 0 auto; 
+
+  display: flex; 
+
+  justify-content: space-between; 
+
+  align-items: center; 
+
+} 
+
+ 
+
+.logo { 
+
+  font-size: 1.5rem; 
+
+  color: var(--text-light); 
+
+} 
+
+ 
+
+.userSection { 
+
+  display: flex; 
+
+  align-items: center; 
+
+  gap: 1rem; 
+
+} 
+
+ 
+
+.userName { 
+
+  font-size: 1.1rem; 
+
+  font-weight: 500; 
+
+  color: var(--primary-light); 
+
+} 
+
+ 
+
+.logoutButton { 
+
+  background-color: transparent; 
+
+  color: var(--text-light); 
+
+  border: 1px solid var(--text-light); 
+
+  padding: 0.4rem 0.8rem; 
+
+  border-radius: 6px; 
+
+  cursor: pointer; 
+
+  font-weight: 600; 
+
+  transition: all 0.2s; 
+
+} 
+
+ 
+
+.logoutButton:hover { 
+
+  background-color: var(--surface-light); 
+
+  color: var(--text-on-primary); 
+
+} 
